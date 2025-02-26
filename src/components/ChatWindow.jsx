@@ -14,7 +14,7 @@ const ChatWindow = ({ userId, username, isPublicChat }) => {
   const aiUserId = `${userId.slice(0, 4)}a100-0000-0000-0000-000000000000`;
 
   const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-pro" });
 
   const fetchMessages = async () => {
     const table = isPublicChat ? "public_chats" : "private_chats";
